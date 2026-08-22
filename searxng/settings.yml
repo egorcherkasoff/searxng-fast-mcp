@@ -1,0 +1,13 @@
+use_default_settings: true
+
+server:
+  # плейсхолдер: docker-entrypoint заменит его на сгенерированный ключ
+  secret_key: "ultrasecretkey"
+  # лимитер выключен: API только на localhost, иначе JSON-запросы ловят 429
+  limiter: false
+
+search:
+  # без json в formats API /search?format=json отвечает 403
+  formats:
+    - html
+    - json
